@@ -151,19 +151,19 @@ extension MainViewController {
 
 extension MainViewController: UITableViewDataSource {
 
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-
-        let countryTitleLabel = UILabel()
-        countryTitleLabel.frame = CGRect(x: 10, y: 20, width: 320, height: 20)
-        countryTitleLabel.font = UIFont.boldSystemFont(ofSize: 17)
-        countryTitleLabel.textColor = .systemGray
-        countryTitleLabel.text = self.tableView(tableView, titleForHeaderInSection: section)
-
-        let headerView = UIView()
-        headerView.addSubview(countryTitleLabel)
-
-        return headerView
-    }
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//
+//        let countryTitleLabel = UILabel()
+//        countryTitleLabel.frame = CGRect(x: 10, y: 20, width: 320, height: 20)
+//        countryTitleLabel.font = UIFont.boldSystemFont(ofSize: 17)
+//        countryTitleLabel.textColor = .systemGray
+//        countryTitleLabel.text = self.tableView(tableView, titleForHeaderInSection: section)
+//
+//        let headerView = UIView()
+//        headerView.addSubview(countryTitleLabel)
+//
+//        return headerView
+//    }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Countries and Deaths"
