@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8CEEFD1CB630CA790F0396E2E24A4C8C"
-               BuildableName = "SkeletonView"
+               BuildableName = "SkeletonView.framework"
                BlueprintName = "SkeletonView"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
