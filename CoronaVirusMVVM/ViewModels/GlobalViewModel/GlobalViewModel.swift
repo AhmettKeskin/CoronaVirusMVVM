@@ -19,26 +19,26 @@ struct GlobalViewModel {
 extension GlobalViewModel {
 
     var active: Int {
-        return globalInfo.active!
+        return globalInfo.active ?? 0
     }
 
     var affectedCountries: Int {
-        return globalInfo.affectedCountries!
+        return globalInfo.affectedCountries ?? 0
     }
 
     var cases: Int {
-        return globalInfo.cases!
+        return globalInfo.cases ?? 0
     }
 
     var deaths: Int {
-        return globalInfo.deaths!
+        return globalInfo.deaths ?? 0
     }
 
     var recovered: Int {
-        return globalInfo.recovered!
+        return globalInfo.recovered ?? 0
     }
 
     var updated: Int {
-        return globalInfo.updated!
+        return globalInfo.updated ?? 0
     }
 }
