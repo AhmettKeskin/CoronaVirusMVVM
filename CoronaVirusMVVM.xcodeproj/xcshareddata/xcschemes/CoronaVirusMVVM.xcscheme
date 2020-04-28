@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4737451824585AE0008DEAA6"
+               BuildableName = "CoronaVirusMVVMTests.xctest"
+               BlueprintName = "CoronaVirusMVVMTests"
+               ReferencedContainer = "container:CoronaVirusMVVM.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
