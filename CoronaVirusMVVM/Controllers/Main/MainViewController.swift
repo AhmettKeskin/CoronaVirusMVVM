@@ -95,7 +95,7 @@ extension MainViewController {
 
         navigationController?.navigationBar.prefersLargeTitles = false
 
-        let url = URL(string: "https://corona.lmao.ninja/countries?sort=country")!
+        let url = URL(string: "https://corona.lmao.ninja/v2/countries?sort=country")!
 
         APIService().getCountries(url: url) { [weak self] countries in
             guard let self = self,
