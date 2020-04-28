@@ -112,7 +112,7 @@ extension MainViewController {
 
     func getAllCases() {
 
-        let url = URL(string: "https://corona.lmao.ninja/all")!
+        let url = URL(string: "https://corona.lmao.ninja/v2/all")!
 
         APIService().getGlobalCases(url: url) { [weak self] global in
             guard let self = self else { return }
