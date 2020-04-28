@@ -20,13 +20,11 @@ class CoronaVirusMVVMTests: XCTestCase {
     }
 
     func testCountryViewModel() {
-        let countryInfo = CountryInfo.
-        do {
-            let countryInfo = try Country(country: "Turkey", countryInfo: "Deaths", cases: 4900, todayCases: 350, deaths: 3000, todayDeaths: 200, recovered: 500, active: 1200, critical: 200, casesPerOneMillion: <#T##Double?#>, deathsPerOneMillion: <#T##Double?#>, updated: <#T##Int?#>)
-            let countryViewModel = CountryViewModel(countryInfo: <#T##Country#>)
-        } catch {
-            print("Testing Error!")
-        }
+        let countryInfo = CountryInfo.init(id: -1021, iso2: "11", iso3: "11", lat: 35.100, long: 23.333, flag: "Trukey")
+        let country = Country(country: "Emre", countryInfo: countryInfo , cases: 4900, todayCases: 350, deaths: 3000, todayDeaths: 200, recovered: 500, active: 1200, critical: 9000000, casesPerOneMillion: 0.3, deathsPerOneMillion: 0.1, updated: 12)
+        let countryViewModel = CountryViewModel(countryInfo: country)
+        XCTAssertEqual(country.critical, countryViewModel.critical)
+
     }
 
     func testExample() throws {
