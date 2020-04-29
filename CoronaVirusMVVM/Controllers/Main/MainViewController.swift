@@ -113,13 +113,14 @@ extension MainViewController {
     func getAllCases() {
 
         let url = URL(string: "https://corona.lmao.ninja/v2/all")!
+        let date = Date()
 
         APIService().getGlobalCases(url: url) { [weak self] global in
             guard let self = self else { return }
 
             if let global = global {
                 self.globalVM = GlobalViewModel(globalInfo: global)
-                let updated = self.getDate(time: Double(self.globalVM.updated))
+                let updated = date.getDate(time: Double(self.globalVM.updated))
 
                 DispatchQueue.main.async {
                     self.worldCasesLabel.text = "Cases: \(String(describing: self.globalVM.active))"
@@ -135,16 +136,6 @@ extension MainViewController {
     }
 
     //getDate(time: self.globalVM.updated)
-
-    func getDate(time: Double) -> String {
-        let date = Double(time / 1000)
-
-        let format = DateFormatter()
-        format.dateFormat = "MM - dd - YYYY hh:mm a"
-        return format.string(from: Date(timeIntervalSince1970:
-            TimeInterval(
-                exactly: date)!))
-    }
 }
 
 // MARK: - UITableViewDataSource
