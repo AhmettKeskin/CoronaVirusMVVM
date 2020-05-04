@@ -47,7 +47,7 @@ class APIService {
 
     }
 
-    func getNews(url: URL, completion: @escaping ([Article]?) -> ()) {
+    func getNews(url: URL, completion: @escaping ([News]?) -> ()) {
 
         URLSession.shared.dataTask(with: url) { data, response, error in
 
@@ -58,7 +58,7 @@ class APIService {
                 let articleList = try? JSONDecoder().decode(NewsResponse.self, from: data)
 
                 if let articleList = articleList {
-                    completion(articleList.articles)
+                    completion(articleList.news)
                 }
             }
         }.resume()
