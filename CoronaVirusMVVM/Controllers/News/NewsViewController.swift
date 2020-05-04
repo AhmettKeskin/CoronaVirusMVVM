@@ -18,6 +18,7 @@ class NewsViewController: UIViewController {
     let apiKey = Constants.shared.newsApiKey
     private var shouldAnimate = true
     private var networkReachability = NetworkReachability()
+    private let publishedDateFormat = Date()
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -73,15 +74,6 @@ class NewsViewController: UIViewController {
 
         }
     }
-
-    public func formattedDate(of publishedAt: String) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"
-        let publishedDate = formatter.date(from: publishedAt)
-        formatter.dateFormat = "dd-MMMM-yyyy"
-        let formattedDate = formatter.string(from: publishedDate!)
-        return formattedDate
-    }
 }
 
 // MARK: - UITableViewDataSource
@@ -108,7 +100,7 @@ extension NewsViewController: UITableViewDataSource {
         cell.newsImageView.sd_setImage(with: URL(string: "\(String(describing: articleVM.urlToImage))"), placeholderImage: UIImage(named: "placeholder.png"))
         cell.newsContentLabel.text = articleVM.title
         cell.newsSourceLabel.text = articleVM.source
-        cell.newsPublishedLabel.text = formattedDate(of: articleVM.publishedAt)
+        cell.newsPublishedLabel.text = publishedDateFormat.formattedDate(of: articleVM.publishedAt)
         cell.hideAnimation()
         return cell
     }
